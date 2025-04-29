@@ -1,0 +1,245 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+.pagina {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+.container {
+   margin-top: 50px;
+    flex: 1; /* ocupa todo o espaço disponível */
+    padding: 20px;
+  }
+
+  body {
+    margin: 0;
+    color: #000; /* texto preto no modo claro */
+    font-family: Arial, sans-serif;
+    background-color: #f5f6fa;
+    transition: background 0.5s, color 0.3s; /* <- aqui a transição fica SEMPRE ativa */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0d1540;
+    width: 100%;
+    max-width: 100%; /* 👈 page container width */
+    margin: 0 auto;     /* 👈 centers the header */
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+
+header.scrolled {
+    background-color:rgb(255, 255, 255); /* Cor de fundo muda quando rola */
+}
+
+.casinha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    filter: none; /* Retira o filtro do modo claro */
+}
+
+
+.casinha img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0) invert(1); /* White icon */
+}
+
+.log {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#b, #b1 {
+    height: 36px;
+    width: 140px;
+    border-radius: 20px;
+    background-color: white;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+#light {
+    height: 36px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: none;
+}
+
+.moon-icon {
+    width: 18px;
+    height: 18px;
+    filter: invert(10%) sepia(60%) saturate(500%) hue-rotate(190deg);
+}
+
+.container {
+    padding: 20px;
+}
+
+.home-icon {
+    margin: 15px;
+}
+
+.home-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+textarea#pergunta {
+    width: 90%;
+    height: 200px;
+    padding: 15px;
+    font-size: 22px;
+    border: none;
+    border-radius: 8px;
+    resize: none;
+    margin-bottom: 40px;
+    background-color: #e8e8e8;
+    color: #1d244f;
+}
+
+.alternativa {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.alternativa input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+.alternativa input[type="text"] {
+    padding: 10px 15px;       /* aumenta a área interna (altura e conforto visual) */
+    font-size: 18px;          /* aumenta o tamanho da fonte */
+    width: 90%;               /* ocupa a maior parte do container */
+    height: 60px;             /* define uma altura maior */
+    background-color: #e8e8e8;
+    border: none;
+    color: #1d244f;
+    box-sizing: border-box;   /* garante que padding não estoure a largura */
+    border-radius: 8px;       /* opcional: cantos levemente arredondados */
+}
+
+.botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.botoes button {
+    background-color: #2c6da4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer {
+    margin: 0;
+    padding: 15px 30px;
+    background-color: #0d1540;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+
+footer .logofoot img {
+    height: 60px; /* menor e proporcional */
+    width: auto;
+}
+
+footer .informe {
+    text-align: right;
+    line-height: 1.4;
+}
+
+/*MODO ESCURO*/
+
+body.dark-mode {
+    color: white;
+    background-color: #003049;
+}
+
+body.dark-mode header {
+    background-color: #021639; /* azul acinzentado claro */
+    transition: background 0.5s, color 0.3s;
+}
+
+body.dark-mode #b,
+body.dark-mode #b1,
+body.dark-mode #light {
+    color: #021639;
+    border: none;
+}
+
+body.dark-mode .casinha img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0) invert(1); /* Imagem branca no modo escuro */
+}
+
+body.light-mode .casinha img {
+    width: 35px;
+    height: 35px;
+    filter: none; /* A imagem fica na cor original #003049 */
+}
+
+body.dark-mode footer {
+    background-color: #021639;
+    color: #f1f1f1;
+    transition: background 0.5s, color 0.3s;
+}
+
+body.dark-mode .btn {
+    background-color: #021639;
+    color: #fff;
+}
+
+.sun-icon {
+    display: none;
+    width: 18px;
+    height: 18px;
+}
+
+.moon-icon {
+    width: 18px;
+    height: 18px;
+}
+
+body.dark-mode .moon-icon {
+    display: none;
+}
+
+body.dark-mode .sun-icon {
+    display: inline;
+}
